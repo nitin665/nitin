@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Amazon UI Clone</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #fff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    /* Header */
+    .amazon-header {
+      background-color: #131921;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .amazon-logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ff9900;
+      text-decoration: none;
+      user-select: none;
+    }
+    .search-bar {
+      flex-grow: 1;
+      display: flex;
+      max-width: 600px;
+    }
+    .search-bar input {
+      border-radius: 0;
+      border: none;
+      padding: 8px 12px;
+      flex-grow: 1;
+    }
+    .search-bar button {
+      background-color: #febd69;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      color: #111;
+    }
+    .header-icons {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      font-size: 0.9rem;
+    }
+    .header-icons div {
+      cursor: pointer;
+      user-select: none;
+    }
+    .header-icons div:hover {
+      text-decoration: underline;
+    }
+
+    /* Navbar */
+    .amazon-nav {
+      background-color: #232f3e;
+      padding: 5px 20px;
+      color: white;
+      font-size: 0.9rem;
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .amazon-nav a {
+      color: white;
+      text-decoration: none;
+      user-select: none;
+      position: relative;
+      padding: 6px 8px;
+      border-radius: 4px;
+    }
+    .amazon-nav a:hover,
+    .amazon-nav a:focus {
+      background-color: #37475a;
+      outline: none;
+    }
+    .dropdown-menu a {
+      color: #111 !important;
+    }
+
+    /* Carousel */
+    .carousel-item img {
+      max-height: 350px;
+      object-fit: cover;
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    /* Product Cards */
+    .product-card {
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      padding: 15px;
+      transition: box-shadow 0.3s ease;
+      background-color: white;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-card:hover {
+      box-shadow: 0 4px 12px rgb(0 0 0 / 0.15);
+    }
+    .product-image {
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+    .product-title {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 8px;
+      flex-grow: 1;
+      color: #111;
+    }
+    .product-price {
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #b12704;
+      font-size: 1.1rem;
+    }
+    .product-rating {
+      color: #ffa41c;
+      margin-bottom: 12px;
+    }
+    .btn-buy {
+      background-color: #febd69;
+      border: none;
+      font-weight: 600;
+      color: #111;
+      transition: background-color 0.3s ease;
+    }
+    .btn-buy:hover {
+      background-color: #f3a847;
+    }
+
+    /* Footer */
+    .amazon-footer {
+      background-color: #232f3e;
+      color: #ddd;
+      padding: 40px 20px;
+      font-size: 0.85rem;
+    }
+    .amazon-footer a {
+      color: #ddd;
+      text-decoration: none;
+    }
+    .amazon-footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="amazon-header">
+    <a href="#" class="amazon-logo">amazon</a>
+    <div class="search-bar">
+      <input type="text" placeholder="Search Amazon" aria-label="Search Amazon" />
+      <button aria-label="Search"><i class="bi bi-search"></i></button>
+    </div>
+    <div class="header-icons">
+      <div>
+        <small>Hello, Sign in</small><br />
+        <strong>Account & Lists <i class="bi bi-caret-down-fill"></i></strong>
+      </div>
+      <div>
+        <small>Returns</small><br />
+        <strong>& Orders</strong>
+      </div>
+      <div>
+        <i class="bi bi-cart3" style="font-size: 1.6rem;"></i><br />
+        <strong>Cart</strong>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="amazon-nav" aria-label="Primary">
+    <a href="#">All</a>
+    <a href="#">Today's Deals</a>
+    <a href="#">Customer Service</a>
+    <a href="#">Gift Cards</a>
+    <a href="#">Registry</a>
+    <a href="#">Sell</a>
+
+    <!-- Example Dropdown -->
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Electronics</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Computers</a></li>
+        <li><a class="dropdown-item" href="#">TV & Video</a></li>
+        <li><a class="dropdown-item" href="#">Cameras</a></li>
+        <li><a class="dropdown-item" href="#">Audio</a></li>
+      </ul>
+    </div>
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">Books</a>
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Fiction</a></li>
+        <li><a class="dropdown-item" href="#">Non-fiction</a></li>
+        <li><a class="dropdown-item" href="#">Children's Books</a></li>
+        <li><a class="dropdown-item" href="#">Textbooks</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="container my-4">
+    <!-- Carousel -->
+    <div id="amazonCarousel" class="carousel slide mb-5" data-bs-ride="carousel" aria-label="Featured promotions">
+      <div class="carousel-inner rounded shadow-sm">
+        <div class="carousel-item active">
+          <img src="https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Promotion 1" />
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Promotion 2" />
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=1200&q=80" class="d-block w-100" alt="Promotion 3" />
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#amazonCarousel" data-bs-slide="prev" aria-label="Previous">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#amazonCarousel" data-bs-slide="next" aria-label="Next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+
+    <!-- Products Grid -->
+    <h2 class="mb-4">Featured Products</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <!-- Product Card Example -->
+      <div class="col">
+        <div class="product-card d-flex flex-column">
+          <img src="https://m.media-amazon.com/images/I/61i8FVWmXSL._AC_UY218_.jpg" alt="Echo Dot" class="product-image mx-auto" />
+          <div class="product-title">Echo Dot (4th Gen) | Smart speaker with Alexa</div>
+          <div class="product-price">$49.99</div>
+          <div class="product-rating" aria-label="4 stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+          </div>
+          <button class="btn btn-buy mt-auto">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card d-flex flex-column">
+          <img src="https://m.media-amazon.com/images/I/71A9Vo1g2+L._AC_UY218_.jpg" alt="Fire TV Stick" class="product-image mx-auto" />
+          <div class="product-title">Fire TV Stick 4K streaming device with Alexa Voice Remote</div>
+          <div class="product-price">$39.99</div>
+          <div class="product-rating" aria-label="4.5 stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+          </div>
+          <button class="btn btn-buy mt-auto">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card d-flex flex-column">
+          <img src="https://m.media-amazon.com/images/I/61bocO9A9xL._AC_UY218_.jpg" alt="Kindle Paperwhite" class="product-image mx-auto" />
+          <div class="product-title">Kindle Paperwhite – Now Waterproof with 2x the Storage</div>
+          <div class="product-price">$129.99</div>
+          <div class="product-rating" aria-label="5 stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+          </div>
+          <button class="btn btn-buy mt-auto">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="product-card d-flex flex-column">
+          <img src="https://m.media-amazon.com/images/I/71swA1A4xnL._AC_UY218_.jpg" alt="Apple AirPods Pro" class="product-image mx-auto" />
+          <div class="product-title">Apple AirPods Pro</div>
+          <div class="product-price">$249.00</div>
+          <div class="product-rating" aria-label="4.5 stars">
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-fill"></i>
+            <i class="bi bi-star-half"></i>
+          </div>
+          <button class="btn btn-buy mt-auto">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="amazon-footer mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 mb-4">
+          <h6>Get to Know Us</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">About Amazon</a></li>
+            <li><a href="#">Investor Relations</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h6>Make Money with Us</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Sell products</a></li>
+            <li><a href="#">Affiliate Program</a></li>
+            <li><a href="#">Advertise Your Products</a></li>
+            <li><a href="#">Self-Publish with Us</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h6>Amazon Payment Products</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Amazon Rewards Visa Signature Cards</a></li>
+            <li><a href="#">Amazon Store Card</a></li>
+            <li><a href="#">Amazon Business Card</a></li>
+            <li><a href="#">Amazon Secured Card</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 mb-4">
+          <h6>Let Us Help You</h6>
+          <ul class="list-unstyled">
+            <li><a href="#">Your Account</a></li>
+            <li><a href="#">Shipping Rates & Policies</a></li>
+            <li><a href="#">Returns & Replacements</a></li>
+            <li><a href="#">Help</a></li>
+          </ul>
+        </div>
+      </div>
+      <hr style="border-color: #444;" />
+      <p class="text-center">&copy; 2025 Amazon Clone. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
